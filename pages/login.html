@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="login">
+        <img src="../images/mainn.jpg" alt="login image" class="lg_img">
+
+        <form class="lg_form" onsubmit="login(event)">
+            <h1 class="lg_title">Login</h1>
+
+            <div class="lg_content">
+                <div class="lg_box">
+                    <i class="ri-user-3-line lg_icon"></i>
+
+                    <div class="lg_box-input">
+                        <input type="email" required class="lg_input" id="login-email" placeholder=" ">
+                        <label for="lg-email" class="lg_label">Email</label>
+                    </div>
+                </div>
+
+                <div class="lg_box">
+                    <i class="ri-lock-2-line lg_icon"></i>
+
+                    <div class="lg_box-input">
+                        <input type="password" required class="lg_input" id="login-pass" placeholder=" ">
+                        <label for="password" class="lg_label">Password</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="lg_button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('login-email').value;
+            var password = document.getElementById('login-pass').value;
+
+            if (email === 'admin@gmail.com' && password === '12345') {
+                alert('Login successful!');
+                window.location.href = "home.html";
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        }
+    </script>
+</body>
+
+</html>
